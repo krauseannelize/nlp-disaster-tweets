@@ -1,0 +1,16 @@
+[project]
+name = "nlp-disaster-tweets"
+version = "0.1.0"
+description = "Binary classification of disaster-related tweets using TF-IDF and machine learning, built with Python (Scikit-learn, Pandas, NLTK)."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=6.29",
+    "jupyterlab>=4.3",
+    "matplotlib>=3.10",
+    "nltk>=3.9",
+    "numpy>=2.2",
+    "pandas>=2.2",
+    "scikit-learn>=1.6",
+    "seaborn>=0.13",
+]

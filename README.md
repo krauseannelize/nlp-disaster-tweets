@@ -53,9 +53,25 @@ uv run jupyter lab
 
 ## Project Overview
 
+This project builds an NLP pipeline to classify tweets as disaster-related or not, using the [Kaggle Disaster Tweets](https://www.kaggle.com/c/nlp-getting-started) dataset of 7,613 labeled tweets. The task is binary classification: given the text of a tweet, predict whether it refers to a real disaster (1) or not (0).
+
 ## Objectives
 
+- Clean and preprocess raw tweet text for use in a machine learning model
+- Transform text into numerical features using TF-IDF vectorization
+- Train and evaluate a classification model (Logistic Regression as baseline)
+- Assess model performance using accuracy, precision, recall, F1-score, and confusion matrix
+- Identify what the model handles well and where it struggles
+
 ## Methodology
+
+1. **Data Loading & Inspection:** Load `train.csv` with Pandas and explore class distribution, text length, and data quality.
+2. **Text Preprocessing:** Lowercase text, remove URLs/mentions/special characters, remove stop words, and apply lemmatization using NLTK.
+3. **Text Vectorization:** Convert cleaned text to numerical features using TF-IDF (Term Frequency–Inverse Document Frequency).
+4. **Train-Test Split:** Split the data into training and test sets for evaluation.
+5. **Model Training:** Train a Logistic Regression classifier as the baseline model.
+6. **Model Evaluation:** Evaluate using classification report and confusion matrix to understand performance across both classes.
+7. **Hyperparameter Tuning (Optional):** Experiment with solver, regularization strength (C), and cross-validation.
 
 ## Key Findings
 

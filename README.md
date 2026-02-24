@@ -75,4 +75,16 @@ This project builds an NLP pipeline to classify tweets as disaster-related or no
 
 ## Key Findings
 
+- **Baseline accuracy:** 82% with Logistic Regression and default TF-IDF (11,708 features)
+- **Tuned accuracy:** 83% after grid search over vocabulary size, ngram range, and regularisation strength
+- **Best parameters:** `C=1`, `max_features=5000`, `ngram_range=(1,1)` — a capped vocabulary reduced noise, while bigrams and alternative regularisation did not improve results
+- **Disaster recall gap:** The model catches 72% of disaster tweets but misses 28%, largely due to figurative language (e.g. "my life is a disaster") and class imbalance
+- **Modest tuning gains:** The baseline was already near optimal for Logistic Regression, suggesting further improvement would require a different model or richer features
+
 ## Future Improvements
+
+- **Address class imbalance:** Apply oversampling (SMOTE) or class weighting to improve disaster recall
+- **Richer features:** Experiment with word embeddings (Word2Vec, GloVe) to capture semantic meaning and word relationships
+- **Alternative models:** Try Naive Bayes, Random Forest, or XGBoost for comparison
+- **Context-aware models:** Use transformer-based models (e.g. BERT) that understand word order and context, which could help with sarcasm and figurative language
+- **Preserve more signal:** Reconsider removing stop words like "not" and "no" that carry negation meaning in short tweet text

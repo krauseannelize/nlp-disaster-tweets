@@ -59,7 +59,7 @@ This project builds an NLP pipeline to classify tweets as disaster-related or no
 
 - Clean and preprocess raw tweet text for use in a machine learning model
 - Transform text into numerical features using TF-IDF vectorization
-- Train and evaluate a classification model (Logistic Regression as baseline)
+- Train and evaluate classification models (Logistic Regression and Linear SVC as baselines)
 - Assess model performance using accuracy, precision, recall, F1-score, and confusion matrix
 - Identify what the model handles well and where it struggles
 
@@ -69,17 +69,17 @@ This project builds an NLP pipeline to classify tweets as disaster-related or no
 2. **Text Preprocessing:** Lowercase text, remove URLs/mentions/special characters, remove stop words, and apply lemmatization using NLTK.
 3. **Text Vectorization:** Convert cleaned text to numerical features using TF-IDF (Term Frequency–Inverse Document Frequency).
 4. **Train-Test Split:** Split the data into training and test sets for evaluation.
-5. **Model Training:** Train a Logistic Regression classifier as the baseline model.
-6. **Model Evaluation:** Evaluate using classification report and confusion matrix to understand performance across both classes.
-7. **Hyperparameter Tuning (Optional):** Experiment with solver, regularization strength (C), and cross-validation.
+5. **Model Training:** Train Logistic Regression and Linear SVC classifiers as baseline models.
+6. **Model Evaluation:** Compare both models using classification reports and confusion matrices.
+7. **Hyperparameter Tuning:** Use Pipeline + GridSearchCV to tune vocabulary size, ngram range, and regularisation strength (C) with 5-fold cross-validation.
 
 ## Key Findings
 
-- **Baseline accuracy:** 82% with Logistic Regression and default TF-IDF (11,708 features)
+- **Baseline comparison:** Logistic Regression (82% accuracy) and Linear SVC (80% accuracy) perform similarly, confirming both linear models reach a comparable ceiling with TF-IDF features
+- **Precision vs recall trade-off:** Logistic Regression has higher disaster precision (0.84 vs 0.78) but lower recall (0.70 vs 0.74). Linear SVC catches more disasters at the cost of more false positives
 - **Tuned accuracy:** 83% after grid search over vocabulary size, ngram range, and regularisation strength
-- **Best parameters:** `C=1`, `max_features=5000`, `ngram_range=(1,1)` — a capped vocabulary reduced noise, while bigrams and alternative regularisation did not improve results
-- **Disaster recall gap:** The model catches 72% of disaster tweets but misses 28%, largely due to figurative language (e.g. "my life is a disaster") and class imbalance
-- **Modest tuning gains:** The baseline was already near optimal for Logistic Regression, suggesting further improvement would require a different model or richer features
+- **Best parameters:** `C=1`, `max_features=5000`, `ngram_range=(1,1)` — a capped vocabulary reduced noise, while bigrams did not improve results
+- **Disaster recall gap:** The tuned model catches 72% of disaster tweets but misses 28%, largely due to figurative language (e.g. "my life is a disaster") and class imbalance
 
 ## Future Improvements
 

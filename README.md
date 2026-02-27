@@ -10,12 +10,12 @@ Binary classification of disaster-related tweets using TF-IDF and machine learni
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=flat&logoColor=white)
 ![uv](https://img.shields.io/badge/uv-DE5FE9?style=flat&logo=uv&logoColor=white)
 
 ## Quick Access
 
 - [View Notebook](notebooks/01-disaster-tweets.ipynb)
+- [View Presentation](presentation/disaster-tweets-classification.pdf)
 
 ## Setup & Installation
 
@@ -68,7 +68,7 @@ This project builds an NLP pipeline to classify tweets as disaster-related or no
 1. **Data Loading & Inspection:** Load `train.csv` with Pandas and explore class distribution, text length, and data quality.
 2. **Text Preprocessing:** Lowercase text, remove URLs/mentions/special characters, remove stop words, and apply lemmatization using NLTK.
 3. **Text Vectorization:** Convert cleaned text to numerical features using TF-IDF (Term Frequency–Inverse Document Frequency).
-4. **Train-Test Split:** Split the data into training and test sets for evaluation.
+4. **Train-Test Split:** Split the data 80/20, stratified to preserve the class distribution in both sets.
 5. **Model Training:** Train Logistic Regression and Linear SVC classifiers as baseline models.
 6. **Model Evaluation:** Compare both models using classification reports and confusion matrices.
 7. **Hyperparameter Tuning:** Use Pipeline + GridSearchCV to tune vocabulary size, ngram range, and regularisation strength (C) with 5-fold cross-validation.
@@ -80,6 +80,7 @@ This project builds an NLP pipeline to classify tweets as disaster-related or no
 - **Tuned accuracy:** 83% after grid search over vocabulary size, ngram range, and regularisation strength
 - **Best parameters:** `C=1`, `max_features=5000`, `ngram_range=(1,1)` — a capped vocabulary reduced noise, while bigrams did not improve results
 - **Disaster recall gap:** The tuned model catches 72% of disaster tweets but misses 28%, largely due to figurative language (e.g. "my life is a disaster") and class imbalance
+- **Error analysis:** False positives are driven by sarcasm and casual use of disaster keywords (e.g. "better than tornado!"). False negatives tend to be tweets where disaster language is subtle or indirect
 
 ## Future Improvements
 

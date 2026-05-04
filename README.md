@@ -15,7 +15,7 @@ Binary classification of disaster-related tweets using TF-IDF and machine learni
 ## Quick Access
 
 - [View Notebook](notebooks/01-disaster-tweets.ipynb)
-- [View Presentation](presentation/disaster-tweets-classification.pdf)
+- [View Presentation](presentation-disaster-tweet-classification.pdf)
 
 ## Setup & Installation
 

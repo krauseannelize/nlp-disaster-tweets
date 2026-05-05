@@ -2,6 +2,8 @@
 
 Binary classification of disaster-related tweets using TF-IDF and machine learning, built with Python (Scikit-learn, Pandas, NLTK).
 
+📺 [Watch the project walkthrough on YouTube](https://youtu.be/__iId3S_-5w)
+
 ## Tools & Skills Used
 
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=flat&logo=matplotlib&logoColor=white)
@@ -14,42 +16,13 @@ Binary classification of disaster-related tweets using TF-IDF and machine learni
 
 ## Quick Access
 
-- [View Notebook](notebooks/01-disaster-tweets.ipynb)
-- [View Presentation](presentation-disaster-tweet-classification.pdf)
-
-## Setup & Installation
-
-### Prerequisites
-
-- Python 3.12+
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) package manager
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/krauseannelize/nlp-disaster-tweets.git
-cd nlp-disaster-tweets
-```
-
-### 2. Install Dependencies
-
-```bash
-uv sync
-```
-
-### 3. Data Acquisition
-
-The dataset is from the [Natural Language Processing with Disaster Tweets](https://www.kaggle.com/c/nlp-getting-started) Kaggle competition. Download and place the file in the `data/` folder:
-
-- `train.csv`
-
-### 4. Run the Project
-
-```bash
-uv run jupyter lab
-```
-
-📌 **Note:** `uv run` automatically uses the project's virtual environment, no manual activation needed
+- [Project overview](#project-overview) | What the project does and the dataset used
+- [Notebook](notebooks/01-disaster-tweets.ipynb) | End-to-end pipeline: preprocessing, TF-IDF, modeling, tuning
+- [Methodology](#methodology) | Step-by-step workflow from raw text to tuned model
+- [Key findings](#key-findings) | Baseline comparison, tuning results, and error analysis
+- [Presentation slides (PDF)](presentation-disaster-tweet-classification.pdf) | Project summary deck
+- [Presentation video](https://youtu.be/__iId3S_-5w) | YouTube walkthrough
+- [Setup & Installation](#setup--installation) | Clone, install, and run
 
 ## Project Overview
 
@@ -89,3 +62,37 @@ This project builds an NLP pipeline to classify tweets as disaster-related or no
 - **Alternative models:** Try Naive Bayes, Random Forest, or XGBoost for comparison
 - **Context-aware models:** Use transformer-based models (e.g. BERT) that understand word order and context, which could help with sarcasm and figurative language
 - **Preserve more signal:** Reconsider removing stop words like "not" and "no" that carry negation meaning in short tweet text
+
+## Setup & Installation
+
+### Prerequisites
+
+- Python 3.12+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) package manager
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/krauseannelize/nlp-disaster-tweets.git
+cd nlp-disaster-tweets
+```
+
+### 2. Install Dependencies
+
+```bash
+uv sync
+```
+
+### 3. Data Acquisition
+
+The dataset is from the [Natural Language Processing with Disaster Tweets](https://www.kaggle.com/c/nlp-getting-started) Kaggle competition. Download and place the file in the `data/` folder:
+
+- `train.csv`
+
+### 4. Run the Project
+
+```bash
+uv run jupyter lab
+```
+
+📌 **Note:** `uv run` automatically uses the project's virtual environment, no manual activation needed
